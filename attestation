@@ -8,3 +8,5 @@ from io import BytesIO
 import os
 import csv
 from pyxlsb import open_workbook as open_xlsb
+
+st.write(Пример отчета о выполнении проекта)
