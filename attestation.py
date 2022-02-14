@@ -111,4 +111,21 @@ plt.xlabel('Число кластеров')
 plt.ylabel('Сумма квадратов расстояний')
 plt.title('Каменистая осыпь')
 st.pyplot()
-st.header('Как обычно - **экспонента!** Однако не стоит отчаиваться, я буду доволен, если рассмотрю от 4 до 6 кластеров, потому что там гипербалической парабалоид :)')
+st.write('Как обычно - **экспонента!** Однако не стоит отчаиваться, я буду доволен, если рассмотрю от 4 до 6 кластеров, потому что там гипербалической парабалоид :)')
+
+st.write('Произведем кластеризацию для каждого случая и визуализируем полученные результаты:')
+for i in range(3,9):
+  model = KMeans(n_clusters = i, random_state = 111, n_init = 100, max_iter = 10000)
+  model.fit(standard_df)
+
+  final_df[f'{i}_clusters'] = model.labels_
+
+  print(final_df.groupby(f'{i}_clusters')[['Work','Price','Salary']].mean())
+
+  threedee = plt.figure(figsize=(15,10)).gca(projection='3d')
+  threedee.scatter(standard_df["T"], standard_df["U"], standard_df["j"], c = final_df[f'{i}_clusters'], alpha = 1, s =40)
+  threedee.set_xlabel('Work')
+  threedee.set_ylabel('Price')
+  threedee.set_zlabel('Salary')
+  threedee.set_title(f'{i} Clusters')
+  st.pyplot()
