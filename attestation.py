@@ -66,6 +66,6 @@ trn = tab.drop(['j'], axis=1)
 st.write('Окинем взглядом основные статистики, посчитанные по данному набору данных.')
 st.write(tab.describe())
 
-sns.boxplot(x='T', y='U', data=tab)
+sns.boxplot(x=class_name, y=column_name, palette="husl", data=tab)
 st.pyplot()
 
