@@ -14,6 +14,14 @@ st.header('Описание набора данных')
 st.write('Набором данных является таблица excel, загруженная на Google диск с настройками общего доступа. '
         'Таблица представляет из себя датасет полученный в результате эксперимента проводимого в рамках кандидатской диссертации. '
         'Кстати меня можно поздравить, 08.02.2022 я защитил кандидатскую диссертацию по направлению 05.02.08 Машиностроение.')
+st.write('Для корректной загрузки прописываем requirements.txt в корне репозитория')
+code_requirements =  '''xlrd==2.0.1
+openpyxl==3.0.7
+pyxlsb==1.0.9
+pandas==1.3.1
+gsheetsdb
+XlsxWriter'''
+st.code(code_requirements, language='python')
 
 st.code('public_gsheets_url = "https://docs.google.com/spreadsheets/d/15283wiW94FwOmLKu-NcB-Lx6AFzZqrbb/edit?usp=sharing&ouid=112094221269107775969&rtpof=true&sd=true"')
 
