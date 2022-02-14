@@ -59,4 +59,4 @@ trn = tab.drop(['j'], axis=1)
 
 #models = [LinearRegression(), RandomForestRegressor(n_estimators=100, max_features ='sqrt'), KNeighborsRegressor(n_neighbors=6), SVR(kernel='linear'), LogisticRegression()]
 
-tab.describe()
+st.write(tab.describe())
