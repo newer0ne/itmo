@@ -111,3 +111,7 @@ plt.xlabel('Число кластеров')
 plt.ylabel('Сумма квадратов расстояний')
 plt.title('Каменистая осыпь')
 st.pyplot()
+
+fig, ax = plt.figure()
+ax.hist(arr, bins=20)
+st.pyplot(fig)
