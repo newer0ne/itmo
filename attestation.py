@@ -81,12 +81,15 @@ if st.button("Generate"):
                 st.write(sns.swarmplot(x=class_name, y=column_name, data=tab,color="y", alpha=0.9))
                 st.pyplot()
 
-st.write('Стандартизируем данные и морально страдаем от своей криворукости от boxplot')
+st.write('Стандартизируем данные:')
 standard_scaler = StandardScaler()
 standard_df = pd.DataFrame(data = standard_scaler.fit_transform(tab), index = tab.index, columns = tab.columns)
 standard_df
+
+st.write('Оценим визуально и придём к выводу что график измерения напряжения до сих пор рваный, однако интуитивно данные после стандартизации выглядят приятнее:')
 st.area_chart(standard_df)
 
+st.write('**boxplot** здорового человека или что это за точки над плотностью тока? Прочитаю об этом завтра на **stackowerflow**:')
 st.write(sns.boxplot(data=standard_df))
 st.pyplot()
          
