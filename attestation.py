@@ -60,12 +60,14 @@ st.header('Предварительная обработка данных')
 st.write('Подготовка данных не требуется, но попробуем графически отобразить полученные значения:')
 st.area_chart(tab)
 
-trg = tab[['j']]
-trn = tab.drop(['j'], axis=1)
-
 st.write('Окинем взглядом основные статистики, посчитанные по данному набору данных.')
 st.write(tab.describe())
 
-sns.boxplot(x=class_name, y=column_name, palette="husl", data=tab)
-st.pyplot()
+#sns.boxplot(x=class_name, y=column_name, palette="husl", data=tab)
+#st.pyplot()
 
+# Dropdown menu to select a dataset
+st.write("### Select a Dataset from below: ")
+selected_dataset = select_dataset_file()
+dataset_type = check_dataset_category(selected_dataset)
+st.info(f'Dataset Type: {dataset_type}')
