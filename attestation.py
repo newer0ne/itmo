@@ -8,6 +8,12 @@ from io import BytesIO
 import os
 import csv
 from pyxlsb import open_workbook as open_xlsb
+import matplotlib
+import matplotlib.pyplot as plt
+matplotlib.style.use('ggplot')
+
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
 
 st.title('Отчет о выполнении проекта')
 st.header('Описание набора данных')
