@@ -66,8 +66,26 @@ st.write(tab.describe())
 #sns.boxplot(x=class_name, y=column_name, palette="husl", data=tab)
 #st.pyplot()
 
-# Dropdown menu to select a dataset
-st.write("### Select a Dataset from below: ")
-selected_dataset = select_dataset_file()
-dataset_type = check_dataset_category(selected_dataset)
-st.info(f'Dataset Type: {dataset_type}')
+        if st.checkbox("Visualize Columns wrt Classes"):
+            st.write("#### Select column to visualize: ")
+            columns = tab.columns.tolist()
+            class_name = columns[-1]
+            column_name = st.selectbox("",columns)
+            st.write("#### Select type of plot: ")
+            plot_type = st.selectbox("", ["kde","box", "violin","swarm"])
+            if st.button("Generate"):
+                if plot_type == "kde":
+                    st.write(sns.FacetGrid(tab, hue=class_name, palette="husl", height=6).map(sns.kdeplot, column_name).add_legend())
+                    st.pyplot()
+
+                if plot_type == "box":
+                    st.write(sns.boxplot(x=class_name, y=column_name, palette="husl", data=df))
+                    st.pyplot()
+
+                if plot_type == "violin":
+                    st.write(sns.violinplot(x=class_name, y=column_name, palette="husl", data=df))
+
+                    st.pyplot()
+                if plot_type == "swarm":
+                    st.write(sns.swarmplot(x=class_name, y=column_name, data=df,color="y", alpha=0.9))
+                    st.pyplot()
