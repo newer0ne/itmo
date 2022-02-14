@@ -7,7 +7,7 @@ import io
 from io import BytesIO
 import os
 import csv
-import sklearn
+from sklearn import train_test_split
 from pyxlsb import open_workbook as open_xlsb
 
 st.title('Отчет о выполнении проекта')
