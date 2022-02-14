@@ -81,6 +81,8 @@ if st.button("Generate"):
                 st.write(sns.swarmplot(x=class_name, y=column_name, data=tab,color="y", alpha=0.9))
                 st.pyplot()
 
+st.write('Стандартизируем данные и морально страдаем от своей криворукости от boxplot')
 standard_scaler = StandardScaler()
 standard_df = pd.DataFrame(data = standard_scaler.fit_transform(tab), index = tab.index, columns = tab.columns)
 standard_df
+standard_df.boxplot(figsize=(15,10))
