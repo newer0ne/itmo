@@ -63,18 +63,13 @@ st.area_chart(tab)
 st.write('Окинем взглядом основные статистики, посчитанные по данному набору данных.')
 st.write(tab.describe())
 
-#sns.boxplot(x=class_name, y=column_name, palette="husl", data=tab)
-#st.pyplot()
-
+st.write('**df.boxplot** напрямую тут не работает, но проанализировав выборку становится ясно, что наш эксперимент выполнялся неравномерно. Выбросы по boxplot пока не оценить, поэтому наивно предположим что их нет. А заодно оценим как выглядят данные потыкав разные кнопочки ниже:')
 columns = tab.columns.tolist()
 class_name = columns[-1]
 column_name = st.selectbox("",columns)
 st.write("#### Select type of plot: ")
-plot_type = st.selectbox("", ["kde","box", "violin","swarm"])
+plot_type = st.selectbox("", ["box", "violin","swarm"])
 if st.button("Generate"):
-        if plot_type == "kde":
-                st.write(sns.FacetGrid(tab, hue=class_name, palette="husl", height=6).map(sns.kdeplot, column_name).add_legend())
-                st.pyplot()
         if plot_type == "box":
                 st.write(sns.boxplot(x=class_name, y=column_name, palette="husl", data=tab))
                 st.pyplot()
