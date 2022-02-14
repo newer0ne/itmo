@@ -87,7 +87,7 @@ standard_df = pd.DataFrame(data = standard_scaler.fit_transform(tab), index = ta
 standard_df
 st.area_chart(standard_df)
 
-st.write(sns.boxplot(data=standard_df)
+st.write(sns.boxplot(data=standard_df))
 st.pyplot()
          
 
