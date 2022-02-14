@@ -47,5 +47,5 @@ def run_query(query):
 sheet_url = st.secrets["public_gsheets_url"]
 rows = run_query(f'SELECT * FROM "{sheet_url}"')
 tab = pd.DataFrame(rows)
-st.write('Наш исходный датасет. T')
+st.write('Наш исходный датасет. T - температура раствора электролита, U - напряжение процесса, j - плотность тока.  Спойлер - мы уверены что зависимость нелинейная, потому что занимаемся этой темой с 2016 года и чтото нам это подсказывает.')
 st.write(tab)
