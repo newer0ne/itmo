@@ -11,7 +11,7 @@ from pyxlsb import open_workbook as open_xlsb
 import matplotlib
 import matplotlib.pyplot as plt
 matplotlib.style.use('ggplot')
-
+import seaborn as sns 
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
 
@@ -63,10 +63,9 @@ st.area_chart(tab)
 trg = tab[['j']]
 trn = tab.drop(['j'], axis=1)
 
-#models = [LinearRegression(), RandomForestRegressor(n_estimators=100, max_features ='sqrt'), KNeighborsRegressor(n_neighbors=6), SVR(kernel='linear'), LogisticRegression()]
-
 st.write('Окинем взглядом основные статистики, посчитанные по данному набору данных.')
 st.write(tab.describe())
 
-st.write('Для того чтобы проверить, что мы ничего не упустили, давайте посмотрим на ящики с усами (boxplot).')
-tab.pyplot.boxplot(figsize=(15,10))
+st.write(sns.boxplot(x=class_name, y=column_name, palette="husl", data=tab))
+st.pyplot()
+
