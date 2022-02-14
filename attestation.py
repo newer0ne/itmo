@@ -59,4 +59,5 @@ trn = tab.drop(['j'], axis=1)
 
 #models = [LinearRegression(), RandomForestRegressor(n_estimators=100, max_features ='sqrt'), KNeighborsRegressor(n_neighbors=6), SVR(kernel='linear'), LogisticRegression()]
 
+st.write('Окинем взглядом основные статистики, посчитанные по данному набору данных.')
 st.write(tab.describe())
