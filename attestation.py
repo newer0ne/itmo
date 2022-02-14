@@ -120,7 +120,7 @@ for i in range(3,9):
 
   final_df[f'{i}_clusters'] = model.labels_
 
-  print(final_df.groupby(f'{i}_clusters')[['Work','Price','Salary']].mean())
+  st.write(final_df.groupby(f'{i}_clusters')[['Work','Price','Salary']].mean())
 
   threedee = plt.figure(figsize=(15,10)).gca(projection='3d')
   threedee.scatter(standard_df["T"], standard_df["U"], standard_df["j"], c = final_df[f'{i}_clusters'], alpha = 1, s =40)
