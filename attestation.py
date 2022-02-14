@@ -80,3 +80,7 @@ if st.button("Generate"):
         if plot_type == "swarm":
                 st.write(sns.swarmplot(x=class_name, y=column_name, data=tab,color="y", alpha=0.9))
                 st.pyplot()
+
+standard_scaler = StandardScaler()
+standard_df = pd.DataFrame(data = standard_scaler.fit_transform(tab), index = tab.index, columns = tab.columns)
+standard_df
