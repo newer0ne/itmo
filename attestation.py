@@ -76,13 +76,13 @@ if st.checkbox("Visualize Columns wrt Classes"):
         if st.button("Generate"):
                 if plot_type == "kde":
                         st.write(sns.FacetGrid(tab, hue=class_name, palette="husl", height=6).map(sns.kdeplot, column_name).add_legend())
-                        st.pyplot()
+                        st.pyplot(fig)
                 if plot_type == "box":
                         st.write(sns.boxplot(x=class_name, y=column_name, palette="husl", data=tab))
-                        st.pyplot()
+                        st.pyplot(fig)
                 if plot_type == "violin":
                         st.write(sns.violinplot(x=class_name, y=column_name, palette="husl", data=tab))
-                        st.pyplot()
+                        st.pyplot(fig)
                 if plot_type == "swarm":
                         st.write(sns.swarmplot(x=class_name, y=column_name, data=tab,color="y", alpha=0.9))
-                        st.pyplot()
+                        st.pyplot(fig)
