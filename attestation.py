@@ -57,4 +57,4 @@ st.area_chart(tab)
 trg = tab[['j']]
 trn = tab.drop(['j'], axis=1)
 
-models = [LinearRegression(), RandomForestRegressor(n_estimators=100, max_features ='sqrt'), KNeighborsRegressor(n_neighbors=6), SVR(kernel='linear'), LogisticRegression()]
+models = [[LinearRegression(), RandomForestRegressor(n_estimators=100, max_features ='sqrt'), KNeighborsRegressor(n_neighbors=6), SVR(kernel='linear'), LogisticRegression()]]
