@@ -7,7 +7,6 @@ import io
 from io import BytesIO
 import os
 import csv
-from sklearn import train_test_split
 from pyxlsb import open_workbook as open_xlsb
 
 st.title('Отчет о выполнении проекта')
@@ -59,4 +58,5 @@ trg = tab[['j']]
 trn = tab.drop(['j'], axis=1)
 
 #models = [LinearRegression(), RandomForestRegressor(n_estimators=100, max_features ='sqrt'), KNeighborsRegressor(n_neighbors=6), SVR(kernel='linear'), LogisticRegression()]
-Xtrn, Xtest, Ytrn, Ytest = train_test_split(trn, trg, test_size=0.4)
+
+tab.describe()
