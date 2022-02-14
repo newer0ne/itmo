@@ -9,4 +9,4 @@ import os
 import csv
 from pyxlsb import open_workbook as open_xlsb
 
-st.title('Пример отчета о выполнении проекта')
+st.title('Отчет о выполнении проекта')
