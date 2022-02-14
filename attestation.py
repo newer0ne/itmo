@@ -66,8 +66,9 @@ st.write(tab.describe())
 st.write('**df.boxplot** напрямую тут не работает, но проанализировав выборку становится ясно, что наш эксперимент выполнялся неравномерно. Выбросы по boxplot пока не оценить, поэтому наивно предположим что их нет. А заодно оценим как выглядят данные потыкав разные кнопочки ниже:')
 columns = tab.columns.tolist()
 class_name = columns[-1]
+st.write("#### Выберем колонку для отображения: ")
 column_name = st.selectbox("",columns)
-st.write("#### Select type of plot: ")
+st.write("#### Выберем тип отображения: ")
 plot_type = st.selectbox("", ["box", "violin","swarm"])
 if st.button("Generate"):
         if plot_type == "box":
