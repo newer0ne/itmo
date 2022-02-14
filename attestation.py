@@ -77,7 +77,7 @@ if st.button("Generate"):
                 st.pyplot()
         if plot_type == "box":
                 st.write(sns.boxplot(x=class_name, y=column_name, palette="husl", data=tab))
-                st.pyplot(sns.boxplot(x=class_name, y=column_name, palette="husl", data=tab))
+                st.pyplot()
         if plot_type == "violin":
                 st.write(sns.violinplot(x=class_name, y=column_name, palette="husl", data=tab))
                 st.pyplot()
