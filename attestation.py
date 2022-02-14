@@ -85,4 +85,4 @@ st.write('Стандартизируем данные и морально стр
 standard_scaler = StandardScaler()
 standard_df = pd.DataFrame(data = standard_scaler.fit_transform(tab), index = tab.index, columns = tab.columns)
 standard_df
-standard_df.boxplot(figsize=(15,10))
+st.write(standard_df.boxplot(figsize=(15,10)))
