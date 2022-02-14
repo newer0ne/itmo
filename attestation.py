@@ -20,7 +20,7 @@ st.code('https://www.spbstu.ru/science/the-department-of-doctoral-studies/defenc
 
 st.write('Вместо скучного MS PowerPoint будем использовать **облачный сервис streamlit.io.**')
 
-st.write('Для корректной загрузки прописываем requirements.txt в корне репозитория. Также прописываем желаемые библиотеки с желаемыми стабильными версиями.')
+st.write('Для корректной загрузки прописываем **requirements.txt** в корне репозитория. Также прописываем желаемые библиотеки с желаемыми стабильными версиями.')
 code_requirements =  '''xlrd==2.0.1
 openpyxl==3.0.7
 pyxlsb==1.0.9
@@ -29,7 +29,7 @@ gsheetsdb
 XlsxWriter'''
 st.code(code_requirements, language='python')
 
-st.write('В настройках приложения Settings/Secrets прописываем ссылку на таблицу в Google docs')
+st.write('В настройках приложения **Settings/Secrets** прописываем ссылку на таблицу в Google docs')
 st.code('public_gsheets_url = "https://docs.google.com/spreadsheets/d/15283wiW94FwOmLKu-NcB-Lx6AFzZqrbb/edit?usp=sharing&ouid=112094221269107775969&rtpof=true&sd=true"')
 
 # Создаём связь
