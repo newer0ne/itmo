@@ -101,3 +101,13 @@ st.write('Наша задача — выяснить, могут ли предл
          'Для проведения кластеризации будем использовать метод k-means. Попытаемся определить адекватное число кластеров (изучим диапазон от 1 до 10).')
 
 final_df = tab.copy()
+K = range(1, 11)
+models = [KMeans(n_clusters = k, random_state = 111, n_init = 100, max_iter = 10000).fit(standard_df) for k in K]
+dist = [model.inertia_ for model in models]
+
+plt.figure(figsize=(15,10))
+plt.plot(K, dist, marker='o')
+plt.xlabel('Число кластеров')
+plt.ylabel('Сумма квадратов расстояний')
+plt.title('Каменистая осыпь')
+plt.show()
