@@ -24,7 +24,8 @@ st.write('Набором данных является таблица excel, з�
 
 st.code('https://www.spbstu.ru/science/the-department-of-doctoral-studies/defences-calendar/the-degree-of-candidate-of-sciences/zakharov_sergey_vladimirovich/')
 
-if st.button('Порадоваться', on_click=st.balloons())
+if st.button('Порадоваться', on_click=st.balloons()):
+        st.write('Спасибо, радоваться можно ещё :)')
         
 st.write('Вместо скучного MS PowerPoint будем использовать **облачный сервис streamlit.io.**')
 
