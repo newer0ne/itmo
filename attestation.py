@@ -107,7 +107,7 @@ st.write('Наша задача — выяснить, могут ли предл
 
 final_df = tab.copy()
 K = range(1, 11)
-models = [KMeans(n_clusters = k, random_state = 111, n_init = 100, max_iter = 10000).fit(standard_df) for k in K]
+models = [KMeans(n_clusters = k, random_state = 111, n_init = 100, max_iter = 1000).fit(standard_df) for k in K]
 dist = [model.inertia_ for model in models]
 
 plt.figure(figsize=(15,10))
