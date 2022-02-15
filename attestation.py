@@ -128,7 +128,7 @@ for i in range(3,9):
   threedee.set_xlabel('Температура раствора электролита Т')
   threedee.set_ylabel('Напряжение U')
   threedee.set_zlabel('Плотность тока j')
-  threedee.set_title(f'{i+1} Clusters')
+  threedee.set_title(f'{i} Clusters')
   st.pyplot()
 
 st.write('По построенным моделям можно предположить, что датасет надо приводить к трехмерной плоскости и уже для него делать разбиения. '
