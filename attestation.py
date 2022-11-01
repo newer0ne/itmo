@@ -13,22 +13,15 @@ st.header('Описание набора данных')
 st.write("""В качестве набора данных выбран результат лабораторного эксперимента,
 проводимого в рамках кандидатской диссертации "Повышение эффективности обработки
 методом электролитно-плазменного полирования на основе ионизационной модели
-парогазовой оболочки" по направлению 05.02.08 Машиностроение. Детали доступны по ссылке ниже:""")
+парогазовой оболочки" по направлению 05.02.08 Машиностроение. 
+Детали доступны по ссылке ниже:""")
 
-header_link = """[<h5 style='text-align: center;'>Кандидатская диссертация</h5>](hhttps://www.spbstu.ru/science/the-department-of-doctoral-studies/defences-calendar/the-degree-of-candidate-of-sciences/zakharov_sergey_vladimirovich/)"""
-st.markdown(header_repolink, unsafe_allow_html=True)
+header_link = """[Кандидатская диссертация](hhttps://www.spbstu.ru/science/the-department-of-doctoral-studies/defences-calendar/the-degree-of-candidate-of-sciences/zakharov_sergey_vladimirovich/)"""
+st.markdown(header_link, unsafe_allow_html=True)
 
-
-st.write('Вместо скучного MS PowerPoint будем использовать **облачный сервис streamlit.io.**')
-
-st.write('Для корректной загрузки прописываем **requirements.txt** в корне репозитория. Также прописываем желаемые библиотеки с желаемыми стабильными версиями.')
-code_requirements =  '''xlrd==2.0.1
-openpyxl==3.0.7
-pyxlsb==1.0.9
-pandas==1.3.1
-gsheetsdb
-XlsxWriter'''
-st.code(code_requirements, language='python')
+st.write("""Вместо предлагаемого в рамках курса способа визуализации результатов
+обработки исходных данных в MS PowerPoint, будем использовать прикладную библиотеку 
+Python ***Streamlit.io.*** и его облачный сервис.""")
 
 st.write('В настройках приложения **Settings/Secrets** прописываем ссылку на таблицу в Google docs')
 st.code('public_gsheets_url = "https://docs.google.com/spreadsheets/d/15283wiW94FwOmLKu-NcB-Lx6AFzZqrbb/edit?usp=sharing&ouid=112094221269107775969&rtpof=true&sd=true"')
