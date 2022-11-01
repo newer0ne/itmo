@@ -15,7 +15,9 @@ st.write("""В качестве набора данных выбран резу�
 методом электролитно-плазменного полирования на основе ионизационной модели
 парогазовой оболочки" по направлению 05.02.08 Машиностроение. Детали доступны по ссылке ниже:""")
 
-st.markdown(['Кандидатская диссертация']('https://www.spbstu.ru/science/the-department-of-doctoral-studies/defences-calendar/the-degree-of-candidate-of-sciences/zakharov_sergey_vladimirovich/'))
+header_repolink = """[<h5 style='text-align: center;'>Кандидатская диссертация</h5>](hhttps://www.spbstu.ru/science/the-department-of-doctoral-studies/defences-calendar/the-degree-of-candidate-of-sciences/zakharov_sergey_vladimirovich/)"""
+st.markdown(header_repolink, unsafe_allow_html=True)
+
 
 st.write('Вместо скучного MS PowerPoint будем использовать **облачный сервис streamlit.io.**')
 
