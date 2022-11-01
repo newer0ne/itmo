@@ -16,7 +16,7 @@ st.write("""В качестве набора данных выбран резу�
 парогазовой оболочки" по направлению 05.02.08 Машиностроение. 
 Детали доступны по ссылке ниже:""")
 
-header_link = """[Кандидатская диссертация](hhttps://www.spbstu.ru/science/the-department-of-doctoral-studies/defences-calendar/the-degree-of-candidate-of-sciences/zakharov_sergey_vladimirovich/)"""
+header_link = """[Ссылка ниже](hhttps://www.spbstu.ru/science/the-department-of-doctoral-studies/defences-calendar/the-degree-of-candidate-of-sciences/zakharov_sergey_vladimirovich/)"""
 st.markdown(header_link, unsafe_allow_html=True)
 
 st.write("""Вместо предлагаемого в рамках курса способа визуализации результатов
@@ -26,13 +26,10 @@ Python ***Streamlit.io.*** и его облачный сервис.""")
 st.write('В настройках приложения **Settings/Secrets** прописываем ссылку на таблицу в Google docs')
 st.code('public_gsheets_url = "https://docs.google.com/spreadsheets/d/15283wiW94FwOmLKu-NcB-Lx6AFzZqrbb/edit?usp=sharing&ouid=112094221269107775969&rtpof=true&sd=true"')
 
-# Создаём связь
 conn = connect()
 
-# Подготовка к SQL-запросу в Google Sheet. Использует метод st.cache для повторного запуска только при изменении запроса или через 600  секунд.
 @st.cache(ttl=600)
 
-# Не совсем понимаю что делает эта функция в streamlit, такое чувство что вытаскивает списки из SQL-запроса
 def run_query(query):
     rows = conn.execute(query, headers=1)
     return rows
